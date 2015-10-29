@@ -13,6 +13,11 @@
 		C0CCBDE01BE23CAE00C7B18F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0CCBDDE1BE23CAE00C7B18F /* Main.storyboard */; };
 		C0CCBDEB1BE23CAE00C7B18F /* serverDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CCBDEA1BE23CAE00C7B18F /* serverDemoTests.swift */; };
 		C0CCBDF61BE23CAE00C7B18F /* serverDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CCBDF51BE23CAE00C7B18F /* serverDemoUITests.swift */; };
+		C0CCBE0A1BE23CBB00C7B18F /* IPAddress.m in Sources */ = {isa = PBXBuildFile; fileRef = C0CCBE051BE23CBB00C7B18F /* IPAddress.m */; settings = {ASSET_TAGS = (); }; };
+		C0CCBE0B1BE23CBB00C7B18F /* Socket.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CCBE061BE23CBB00C7B18F /* Socket.swift */; settings = {ASSET_TAGS = (); }; };
+		C0CCBE0C1BE23CBB00C7B18F /* TCPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CCBE071BE23CBB00C7B18F /* TCPClient.swift */; settings = {ASSET_TAGS = (); }; };
+		C0CCBE0D1BE23CBB00C7B18F /* TCPServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CCBE081BE23CBB00C7B18F /* TCPServer.swift */; settings = {ASSET_TAGS = (); }; };
+		C0CCBE0E1BE23CBB00C7B18F /* ytcpsocket.c in Sources */ = {isa = PBXBuildFile; fileRef = C0CCBE091BE23CBB00C7B18F /* ytcpsocket.c */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +50,13 @@
 		C0CCBDF11BE23CAE00C7B18F /* serverDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = serverDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0CCBDF51BE23CAE00C7B18F /* serverDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = serverDemoUITests.swift; sourceTree = "<group>"; };
 		C0CCBDF71BE23CAE00C7B18F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C0CCBE041BE23CBB00C7B18F /* IPAddress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPAddress.h; sourceTree = "<group>"; };
+		C0CCBE051BE23CBB00C7B18F /* IPAddress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPAddress.m; sourceTree = "<group>"; };
+		C0CCBE061BE23CBB00C7B18F /* Socket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Socket.swift; sourceTree = "<group>"; };
+		C0CCBE071BE23CBB00C7B18F /* TCPClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TCPClient.swift; sourceTree = "<group>"; };
+		C0CCBE081BE23CBB00C7B18F /* TCPServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TCPServer.swift; sourceTree = "<group>"; };
+		C0CCBE091BE23CBB00C7B18F /* ytcpsocket.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ytcpsocket.c; sourceTree = "<group>"; };
+		C0CCBE131BE23DCC00C7B18F /* Network-swift.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Network-swift.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +107,8 @@
 		C0CCBDD71BE23CAE00C7B18F /* serverDemo */ = {
 			isa = PBXGroup;
 			children = (
+				C0CCBE131BE23DCC00C7B18F /* Network-swift.h */,
+				C0CCBE031BE23CBB00C7B18F /* ysocket */,
 				C0CCBDD81BE23CAE00C7B18F /* AppDelegate.swift */,
 				C0CCBDDA1BE23CAE00C7B18F /* ViewController.swift */,
 				C0CCBDDC1BE23CAE00C7B18F /* Assets.xcassets */,
@@ -120,6 +134,19 @@
 				C0CCBDF71BE23CAE00C7B18F /* Info.plist */,
 			);
 			path = serverDemoUITests;
+			sourceTree = "<group>";
+		};
+		C0CCBE031BE23CBB00C7B18F /* ysocket */ = {
+			isa = PBXGroup;
+			children = (
+				C0CCBE041BE23CBB00C7B18F /* IPAddress.h */,
+				C0CCBE051BE23CBB00C7B18F /* IPAddress.m */,
+				C0CCBE061BE23CBB00C7B18F /* Socket.swift */,
+				C0CCBE071BE23CBB00C7B18F /* TCPClient.swift */,
+				C0CCBE081BE23CBB00C7B18F /* TCPServer.swift */,
+				C0CCBE091BE23CBB00C7B18F /* ytcpsocket.c */,
+			);
+			path = ysocket;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -251,8 +278,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0CCBE0B1BE23CBB00C7B18F /* Socket.swift in Sources */,
+				C0CCBE0C1BE23CBB00C7B18F /* TCPClient.swift in Sources */,
+				C0CCBE0D1BE23CBB00C7B18F /* TCPServer.swift in Sources */,
 				C0CCBDDB1BE23CAE00C7B18F /* ViewController.swift in Sources */,
 				C0CCBDD91BE23CAE00C7B18F /* AppDelegate.swift in Sources */,
+				C0CCBE0A1BE23CBB00C7B18F /* IPAddress.m in Sources */,
+				C0CCBE0E1BE23CBB00C7B18F /* ytcpsocket.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -388,6 +420,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = a.serverDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "serverDemo/Network-swift.h";
 			};
 			name = Debug;
 		};
@@ -400,6 +433,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = a.serverDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "serverDemo/Network-swift.h";
 			};
 			name = Release;
 		};
